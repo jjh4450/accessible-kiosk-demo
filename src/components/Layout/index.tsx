@@ -4,7 +4,7 @@ import { layoutContainer } from "./styles.css";
 
 function Layout() {
   return (
-    <div className={layoutContainer}>
+    <div>
       <Header />
       <Outlet />
     </div>

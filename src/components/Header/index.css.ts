@@ -1,16 +1,17 @@
 import { style, styleVariants } from "@vanilla-extract/css";
 
-const mobileBreakpoint = "1000px";
+const mobileBreakpoint = "500px";
 
 export const headerStyles = style({
+  position: "fixed",
   top: 0,
   left: 0,
   right: 0,
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  padding: "1rem 1%",
-  height: "4%",
+  padding: "0.75rem 1.5rem",
+  height: "2.25rem",
   background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
   zIndex: 1000,
   boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
@@ -25,14 +26,14 @@ export const currentPageStyles = style({
   color: "white",
   fontSize: "16px",
   fontWeight: "bold",
-  "@media": {
-    [`(max-width: ${mobileBreakpoint})`]: {
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-    },
-  },
+  // "@media": {
+  //   [`(max-width: ${mobileBreakpoint})`]: {
+  //     position: "absolute",
+  //     top: "50%",
+  //     left: "50%",
+  //     transform: "translate(-50%, -50%)",
+  //   },
+  // },
 });
 
 export const toggleBtnStyles = style({
@@ -69,7 +70,7 @@ const menuBaseStyles = style({
   borderBottomLeftRadius: "0",
   marginTop: "1rem",
   "@media": {
-    "(min-width: 1000px)": {
+    "(min-width: 500px)": {
       marginTop: "0",
       position: "static",
       display: "flex",

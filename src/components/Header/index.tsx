@@ -20,7 +20,7 @@ const Header: React.FC = () => {
   const location = useLocation();
   const lottieRef = useRef<LottieRefCurrentProps>(null);
   const headerRef = useRef<HTMLDivElement>(null);
-  const isDesktop = useMediaQuery("(min-width: 1000px)");
+  const isDesktop = useMediaQuery("(min-width: 500px)");
 
   const handleToggle = useCallback(() => {
     toggleActive();

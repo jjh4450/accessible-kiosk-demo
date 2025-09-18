@@ -3,6 +3,7 @@
 
 body {
     overscroll-behavior-y: none;
+    padding-top: 3.75rem;
 }
 
 @media (min-height: 1000px) {
