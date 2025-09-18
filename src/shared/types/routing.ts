@@ -23,10 +23,12 @@ export type routerInfoType =
       element: LazyComponent;
       expose: true;
       korean: string;
+      category: string;
     }
   | {
       path: string;
       element: LazyComponent;
       expose?: false;
       korean?: string;
+      category?: string;
     };
