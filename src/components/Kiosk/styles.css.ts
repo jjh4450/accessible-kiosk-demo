@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css';
 
 export const kioskContainer = style({
   width: '100vw',
-  height: '100vh',
+  height: '93.5vh',
   background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
   display: 'flex',
   flexDirection: 'column',

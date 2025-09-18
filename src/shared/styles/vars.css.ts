@@ -9,8 +9,9 @@ export const vars = createGlobalTheme("#root", {
     green2: "#6AE5AE",
     green3: "#B1F492",
     white: "#FFFFFF",
+    background: "#E1E1E1",
   },
   font: {
-    pretendardRegular: "pretendard, sans-serif",
+    pretendard: "NotoSansLatin, pretendard, sans-serif",
   },
 });

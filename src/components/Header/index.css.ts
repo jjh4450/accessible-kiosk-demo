@@ -5,15 +5,14 @@ const mobileBreakpoint = "1000px";
 const boxColor = "rgba(33, 33, 33, 0.7)";
 
 export const headerStyles = style({
-  position: "fixed",
   top: 0,
   left: 0,
   right: 0,
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  padding: "0.75rem 1.5rem",
-  height: "2.25rem",
+  padding: "1rem 1.5rem",
+  height: "3vh",
   backdropFilter: "blur(10px)",
   backgroundColor: boxColor,
   zIndex: 1000,
