@@ -14,7 +14,7 @@ export const orderSummaryTitle = style({
   textAlign: 'center',
 });
 
-export const orderItems = style({
+export const orderItemsContainer = style({
   flex: '1',
   overflowY: 'auto',
   marginBottom: '20px',
@@ -106,8 +106,10 @@ export const totalInfo = style({
   fontWeight: '600',
 });
 
-export const totalAmount = style({
+export const totalAmountText = style({
   fontSize: '1.4rem',
+  color: '#2ecc71',
+  fontWeight: '700'
 });
 
 export const orderButton = style({

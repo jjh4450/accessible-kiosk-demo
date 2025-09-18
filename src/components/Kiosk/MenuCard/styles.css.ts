@@ -24,11 +24,12 @@ export const menuImage = style({
   marginBottom: '15px',
   background: '#f8f9fa',
   
-  'img': {
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-  },
+});
+
+export const imgStyles = style({
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover'
 });
 
 export const menuInfo = style({

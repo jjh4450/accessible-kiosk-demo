@@ -1,7 +1,8 @@
 import { MenuItem } from '../../../shared/types/menu';
 import { 
   menuCardContainer, 
-  menuImage, 
+  menuImage,
+  imgStyles, 
   menuInfo, 
   menuName, 
   menuDescription, 
@@ -27,6 +28,7 @@ const MenuCard = ({ menuItem, onAddToOrder }: MenuCardProps) => {
         <img 
           src={menuItem.image} 
           alt={menuItem.name}
+          className={imgStyles}
           onError={(e) => {
             // 이미지 로드 실패 시 기본 이미지로 대체
             e.currentTarget.src = '/src/assets/menu_images/ico_cafe.png';

@@ -6,7 +6,7 @@ import {
   orderButton, 
   emptyOrder,
   orderSummaryTitle,
-  orderItems,
+  orderItemsContainer,
   itemInfo,
   itemName,
   itemPrice,
@@ -15,7 +15,7 @@ import {
   quantity,
   removeBtn,
   totalInfo,
-  totalAmount
+  totalAmountText
 } from './styles.css';
 
 interface OrderSummaryProps {
@@ -48,7 +48,7 @@ const OrderSummary = ({
     <div className={orderSummaryContainer}>
       <h2 className={orderSummaryTitle}>주문 내역</h2>
       
-      <div className={orderItems}>
+      <div className={orderItemsContainer}>
         {orderItems.map((orderItem) => (
           <div key={orderItem.menuItem.id} className={orderItemCard}>
             <div className={itemInfo}>
@@ -85,7 +85,7 @@ const OrderSummary = ({
       <div className={orderTotal}>
         <div className={totalInfo}>
           <span>총 금액:</span>
-          <span className={totalAmount}>{totalAmount.toLocaleString()}원</span>
+          <span className={totalAmountText}>{totalAmount.toLocaleString()}원</span>
         </div>
       </div>
       

@@ -1,5 +1,4 @@
 import { routerInfoType } from "../types/routing.ts";
-import { categories } from "../types/category.ts";
 
 export const routerInfo: routerInfoType[] = [
   {

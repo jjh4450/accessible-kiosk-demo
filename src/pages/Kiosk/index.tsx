@@ -34,7 +34,7 @@ const Kiosk = () => {
         menuItem,
         quantity: 1,
         size: menuItem.size || 'medium',
-        temperature: menuItem.temperature || 'hot'
+        temperature: menuItem.temperature === 'both' ? 'hot' : (menuItem.temperature || 'hot')
       };
       setOrderItems([...orderItems, newOrderItem]);
     }
