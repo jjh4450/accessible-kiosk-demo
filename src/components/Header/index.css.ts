@@ -2,8 +2,6 @@ import { style, styleVariants } from "@vanilla-extract/css";
 
 const mobileBreakpoint = "1000px";
 
-const boxColor = "rgba(33, 33, 33, 0.7)";
-
 export const headerStyles = style({
   top: 0,
   left: 0,
@@ -12,11 +10,10 @@ export const headerStyles = style({
   justifyContent: "space-between",
   alignItems: "center",
   padding: "1rem 1.5rem",
-  height: "3vh",
-  backdropFilter: "blur(10px)",
-  backgroundColor: boxColor,
+  height: "2.6vh",
+  background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
   zIndex: 1000,
-  boxShadow: `0 4px 6px ${boxColor}`,
+  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
 });
 
 export const logoStyles = style({
