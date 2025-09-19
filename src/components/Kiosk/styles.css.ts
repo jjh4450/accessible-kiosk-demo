@@ -1,11 +1,73 @@
-import { style } from '@vanilla-extract/css';
+import { style, globalStyle } from '@vanilla-extract/css';
 
 export const kioskContainer = style({
-  height: '92.7vh',
   background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
   display: 'flex',
+  flexDirection: 'column'
+});
+
+export const dialogCSS = style ({
+  padding: 0,
+  border: "none",
+  borderRadius: '20px',
+})
+
+globalStyle(`${dialogCSS}::backdrop`, {
+  backgroundColor: "rgba(0,0,0,0.6)", // 예시
+  backdropFilter: "blur(4px)",        // 예시
+});
+
+export const welcomeContainer = style({
+  flex: 1,
+  display: 'flex',
   flexDirection: 'column',
-  fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: '2rem',
+  color: 'white',
+  textAlign: 'center',
+  background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+  backdropFilter: 'blur(10px)',
+  borderRadius: '20px',
+  
+});
+
+export const welcomeTitle = style({
+  fontSize: '3rem',
+  fontWeight: '700',
+  marginBottom: '1.5rem',
+  textShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+});
+
+export const welcomeSubtitle = style({
+  fontSize: '1.5rem',
+  marginBottom: '2rem',
+  lineHeight: '1.6',
+  maxWidth: '600px',
+  textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)',
+});
+
+export const startButton = style({
+  padding: '1.2rem 2.4rem',
+  fontSize: '1.5rem',
+  fontWeight: '600',
+  color: '#764ba2',
+  background: 'white',
+  border: 'none',
+  borderRadius: '50px',
+  cursor: 'pointer',
+  transition: 'all 0.3s ease',
+  boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
+
+  ':hover': {
+    transform: 'translateY(-2px)',
+    boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)',
+  },
+
+  ':active': {
+    transform: 'translateY(0)',
+    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
+  },
 });
 
 export const kioskHeader = style({

@@ -18,10 +18,12 @@
   },
   "dependencies": {
     "@microsoft/clarity": "^1.0.0",
+    "@openai/realtime-api-beta": "github:openai/openai-realtime-api-beta",
     "@vanilla-extract/css": "^1.16.1",
     "axios": "^1.7.7",
     "date-fns": "^4.1.0",
     "lottie-light-react": "^2.4.0",
+    "openai": "^5.22.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router": "^7.0.1",
