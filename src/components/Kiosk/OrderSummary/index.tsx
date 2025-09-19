@@ -1,9 +1,9 @@
-import { OrderItem } from '../../../shared/types/menu';
-import { 
-  orderSummaryContainer, 
-  orderItemCard, 
-  orderTotal, 
-  orderButton, 
+import { useOrderStore } from "../../../shared/store/order";
+import {
+  orderSummaryContainer,
+  orderItemCard,
+  orderTotal,
+  orderButton,
   emptyOrder,
   orderSummaryTitle,
   orderItemsContainer,
@@ -15,24 +15,26 @@ import {
   quantity,
   removeBtn,
   totalInfo,
-  totalAmountText
-} from './styles.css';
+  totalAmountText,
+} from "./styles.css";
 
-interface OrderSummaryProps {
-  orderItems: OrderItem[];
-  totalAmount: number;
-  onUpdateQuantity: (menuItemId: string, quantity: number) => void;
-  onRemoveItem: (menuItemId: string) => void;
-  onOrder: () => void;
-}
+const OrderSummary = () => {
+  const { orderItems, updateItemQuantity, removeItem } = useOrderStore();
 
-const OrderSummary = ({
-  orderItems,
-  totalAmount,
-  onUpdateQuantity,
-  onRemoveItem,
-  onOrder
-}: OrderSummaryProps) => {
+  const totalAmount = orderItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0,
+  );
+
+  const handleOrder = () => {
+    if (orderItems.length === 0) return;
+
+    // 주문 처리 로직 (나중에 OpenAI API와 연동)
+    console.log("주문 완료:", orderItems);
+    alert("주문이 완료되었습니다!");
+    useOrderStore.setState({ orderItems: [] });
+  };
+
   if (orderItems.length === 0) {
     return (
       <div className={orderSummaryContainer}>
@@ -47,33 +49,37 @@ const OrderSummary = ({
   return (
     <div className={orderSummaryContainer}>
       <h2 className={orderSummaryTitle}>주문 내역</h2>
-      
+
       <div className={orderItemsContainer}>
         {orderItems.map((orderItem) => (
-          <div key={orderItem.menuItem.id} className={orderItemCard}>
+          <div key={orderItem.id} className={orderItemCard}>
             <div className={itemInfo}>
-              <h4 className={itemName}>{orderItem.menuItem.name}</h4>
-              <p className={itemPrice}>{orderItem.menuItem.price.toLocaleString()}원</p>
+              <h4 className={itemName}>{orderItem.name}</h4>
+              <p className={itemPrice}>{orderItem.price.toLocaleString()}원</p>
             </div>
-            
+
             <div className={quantityControls}>
-              <button 
-                onClick={() => onUpdateQuantity(orderItem.menuItem.id, orderItem.quantity - 1)}
+              <button
+                onClick={() =>
+                  updateItemQuantity(orderItem.id, orderItem.quantity - 1)
+                }
                 className={quantityBtn}
               >
                 -
               </button>
               <span className={quantity}>{orderItem.quantity}</span>
-              <button 
-                onClick={() => onUpdateQuantity(orderItem.menuItem.id, orderItem.quantity + 1)}
+              <button
+                onClick={() =>
+                  updateItemQuantity(orderItem.id, orderItem.quantity + 1)
+                }
                 className={quantityBtn}
               >
                 +
               </button>
             </div>
-            
-            <button 
-              onClick={() => onRemoveItem(orderItem.menuItem.id)}
+
+            <button
+              onClick={() => removeItem(orderItem.id)}
               className={removeBtn}
             >
               삭제
@@ -81,15 +87,17 @@ const OrderSummary = ({
           </div>
         ))}
       </div>
-      
+
       <div className={orderTotal}>
         <div className={totalInfo}>
           <span>총 금액:</span>
-          <span className={totalAmountText}>{totalAmount.toLocaleString()}원</span>
+          <span className={totalAmountText}>
+            {totalAmount.toLocaleString()}원
+          </span>
         </div>
       </div>
-      
-      <button className={orderButton} onClick={onOrder}>
+
+      <button className={orderButton} onClick={handleOrder}>
         주문하기 ({totalAmount.toLocaleString()}원)
       </button>
     </div>

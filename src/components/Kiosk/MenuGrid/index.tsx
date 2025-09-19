@@ -1,21 +1,16 @@
-import { MenuItem } from '../../../shared/types/menu';
-import MenuCard from '../MenuCard';
-import { menuGridContainer } from './styles.css';
+import { MenuItem } from "../../../shared/types/menu";
+import MenuCard from "../MenuCard";
+import { menuGridContainer } from "./styles.css";
 
 interface MenuGridProps {
   menuItems: MenuItem[];
-  onAddToOrder: (menuItem: MenuItem) => void;
 }
 
-const MenuGrid = ({ menuItems, onAddToOrder }: MenuGridProps) => {
+const MenuGrid = ({ menuItems }: MenuGridProps) => {
   return (
     <div className={menuGridContainer}>
       {menuItems.map((item) => (
-        <MenuCard
-          key={item.id}
-          menuItem={item}
-          onAddToOrder={onAddToOrder}
-        />
+        <MenuCard key={item.id} menuItem={item} />
       ))}
     </div>
   );
