@@ -40,7 +40,7 @@ importers:
         version: 7.1.2
       openai:
         specifier: ^5.22.0
-        version: 5.22.0(ws@8.18.3)
+        version: 5.22.0(ws@8.18.3)(zod@4.1.9)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -53,6 +53,9 @@ importers:
       react-router-dom:
         specifier: ^7.0.2
         version: 7.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      zod:
+        specifier: ^4.1.9
+        version: 4.1.9
       zustand:
         specifier: ^5.0.8
         version: 5.0.8(@types/react@18.3.12)(react@18.3.1)
@@ -2423,6 +2426,9 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
+  zod@4.1.9:
+    resolution: {integrity: sha512-HI32jTq0AUAC125z30E8bQNz0RQ+9Uc+4J7V97gLYjZVKRjeydPgGt6dvQzFrav7MYOUGFqqOGiHpA/fdbd0cQ==}
+
   zustand@5.0.8:
     resolution: {integrity: sha512-gyPKpIaxY9XcO2vSMrLbiER7QMAMGOQZVRdJ6Zi782jkbzZygq5GI9nG8g+sMgitRtndwaBSl7uiqC49o1SSiw==}
     engines: {node: '>=12.20.0'}
@@ -4093,9 +4099,10 @@ snapshots:
     dependencies:
       mimic-function: 5.0.1
 
-  openai@5.22.0(ws@8.18.3):
+  openai@5.22.0(ws@8.18.3)(zod@4.1.9):
     optionalDependencies:
       ws: 8.18.3
+      zod: 4.1.9
 
   optionator@0.9.4:
     dependencies:
@@ -4633,6 +4640,8 @@ snapshots:
       yargs-parser: 21.1.1
 
   yocto-queue@0.1.0: {}
+
+  zod@4.1.9: {}
 
   zustand@5.0.8(@types/react@18.3.12)(react@18.3.1):
     optionalDependencies:
