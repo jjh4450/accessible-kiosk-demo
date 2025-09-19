@@ -8,6 +8,7 @@ import Lottie, { LottieRefCurrentProps } from "lottie-light-react";
 import { useMediaQuery, useToggle } from "./customHooks.ts";
 
 import { isCurrentPath, useCurrentPage } from "@utils/routerUtils.ts";
+import { logoStyles } from "./index.css.ts";
 
 /**
  * Header 컴포넌트
@@ -71,8 +72,8 @@ const Header: React.FC = () => {
   return (
     <header ref={headerRef} className={styles.headerStyles}>
       {/*로고 부분*/}
-      <Link to="/">
-        <h1 className={styles.logoStyles}>Logo</h1>
+      <Link to="/" className={logoStyles}>
+        <h1 className={styles.logoText}>Voice Touch</h1>
       </Link>
 
       {/*현재 페이지 출력 부분*/}

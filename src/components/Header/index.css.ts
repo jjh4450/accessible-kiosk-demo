@@ -1,4 +1,5 @@
 import { style, styleVariants } from "@vanilla-extract/css";
+import { safeHoverOption, vars } from "@styles/vars.css.ts";
 
 const mobileBreakpoint = "500px";
 
@@ -18,8 +19,32 @@ export const headerStyles = style({
 });
 
 export const logoStyles = style({
+  textDecoration: "none",
   width: "4em",
   height: "auto",
+});
+
+export const logoText = style({
+  color: "white",
+  fontSize: "1.05rem",
+  fontStyle: "italic",
+  lineHeight: 0.9,
+  fontFamily: "YeongdoOTF", // Ensure the font family matches your design
+  textAlign: "center",
+  marginTop: "0.5rem",
+  "@media": {
+    [`(max-width: ${mobileBreakpoint})`]: {
+      fontSize: "0.875rem",
+    },
+    "(max-width: 768px)": {
+      display: "none",
+    },
+    [safeHoverOption]: {
+      ":hover": {
+        color: vars.color.green3,
+      },
+    },
+  },
 });
 
 export const currentPageStyles = style({
