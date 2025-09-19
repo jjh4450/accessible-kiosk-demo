@@ -1,5 +1,4 @@
-import { globalStyle, globalFontFace } from "@vanilla-extract/css";
-import { vars } from "@styles/vars.css.ts";
+import { globalFontFace } from "@vanilla-extract/css";
 
 globalFontFace("NotoSansLatin", {
   fontStyle: "normal",
