@@ -1,0 +1,14 @@
+{
+  "watch": ["server", "src", "server.js"],
+  "ext": "js,cjs,mjs,json,env",
+  "ignore": [
+    "node_modules",
+    ".git",
+    "dist",
+    "build",
+    "logs",
+    "**/*.timestamp-*.mjs",
+    "vite.config.*.timestamp-*.mjs"
+  ],
+  "delay": "200"
+}
